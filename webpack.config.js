@@ -6,6 +6,14 @@ module.exports = {
     path: path.resolve(__dirname, "./"),
     filename: "main.js",
   },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, './'),
+    },
+    port: 3000,
+    open: true,
+    hot: true,
+  },
   module: {
     rules: [
       {
@@ -14,8 +22,7 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"],
-            plugins: ["@babel/plugin-transform-runtime"],
+            presets: ["@babel/preset-env"]
           },
         },
       },
